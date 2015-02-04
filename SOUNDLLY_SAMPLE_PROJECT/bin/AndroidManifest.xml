@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="own.tetchi.apps.soundl.ly.sample"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".application.SampleTestApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <service android:name="com.soundlly.sdk.service.SoundllyService" >
+            <intent-filter>
+                <action android:name="own.tetchi.apps.soundl.ly.sample.BIND" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.soundlly.sdk.receiver.SoundllyReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- <receiver android:name="own.tetchi.apps.soundl.ly.sample.SoundlyBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="own.tetchi.apps.soundl.ly.sample.SOUNDLLY_RESULT" />
+                <action android:name="own.tetchi.apps.soundl.ly.sample.ON_BIND" />
+            </intent-filter>
+        </receiver> -->
+    </application>
+
+</manifest>

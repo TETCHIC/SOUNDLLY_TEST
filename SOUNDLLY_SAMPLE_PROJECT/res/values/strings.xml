@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">사운들리 코드 샘플</string>
+    <string name="status_init">초기화</string>
+    <string name="status_bind">서비스 시작</string>
+    <string name="status_recv">데이터를 기다리는 중입니다.</string>
+    <string name="code_ok">컨텐츠 데이터 정상 수신</string>
+    <string name="code_no_contents">컨텐츠 데이터 없습니다.</string>
+    <string name="code_server_error">네트워크 연결 에러</string>
+    <string name="code_time_out">네트워크 타임아웃</string>
+    <string name="code_unauthorized">인증받지 않은 API 키입니다.</string>
+    <string name="code_unknown_error">기타 에러</string>
+    <string name="code_no_watermark">워터마크가 존재하지 않습니다.</string>
+    <string name="code_mic_error">마이크 초기화 에러</string>
+
+</resources>
